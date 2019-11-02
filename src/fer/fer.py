@@ -114,7 +114,7 @@ class FER(object):
 
             self.__graph = tf.Graph()
 
-            self.__session = tf.Session(config=self.config, graph=self.__graph)
+            self.__session = tf.compat.v1.Session(config=self.config, graph=self.__graph)
 
             # with tf.Session(graph=K.get_session().graph, config=self.config) as sess:
             self.__emotion_classifier = load_model(emotion_model, compile=compile)
